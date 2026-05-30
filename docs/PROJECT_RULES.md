@@ -62,6 +62,8 @@ Codex 必须先输出以下内容，再分配给 Multica Agent:
 - `Evidence Gate`: 程序/UI/音频/美术相关 issue 必须有验证证据或明确降级方案。
 - `Retest Gate`: QA blocked 后，只有 blocker issue 评论中出现修复分支、提交 SHA 和验证命令，才能复测。
 
+执行清单见 `docs/production/gate-checklist.md`。
+
 ## 审查门槛
 
 Codex 汇总时必须检查:
