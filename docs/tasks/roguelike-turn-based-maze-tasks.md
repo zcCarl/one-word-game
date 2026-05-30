@@ -43,7 +43,7 @@ Owner: 正式03-视觉总监, 正式04-美术提示词师, 正式05-技术美术
 Deliverables:
 
 - Visual direction and color palette.
-- Asset list and generation prompts.
+- GPT image asset list and generation prompts.
 - Tile states, enemy/item/event icons or placeholders with style.
 - Basic animation/transition feedback.
 - Audio feedback plan and simple generated/synthesized sounds if feasible.
@@ -85,11 +85,11 @@ Define compact dungeon-roguelike visual direction, UI hierarchy, tile state lang
 
 ### 正式04-美术提示词师
 
-Produce prompts for board tiles, adventurer, monsters, boss, items, event icons, UI frame, and optional background.
+Produce prompts for board tiles, adventurer, monsters, boss, items, event icons, UI frame, and optional background. Use `docs/art/gpt-asset-production-pipeline.md` and `docs/art/roguelike-maze-gpt-prompts.md` as the canonical GPT image workflow.
 
 ### 正式05-技术美术
 
-Define asset import specs, icon sizes, animation timings, particle/flash feedback, and performance-safe rendering plan.
+Define asset import specs, icon sizes, animation timings, particle/flash feedback, and performance-safe rendering plan. Normalize generated GPT assets into the `assets/images/` structure.
 
 ### 正式06-主程
 
@@ -110,4 +110,3 @@ Define BGM mood and interaction sounds: reveal, hit, enemy hit, item pickup, lev
 ### 正式10-QA Lead
 
 Write and run smoke checklist. Verify no static fake demo, no blocked path, no impossible win, and no UI overlap.
-

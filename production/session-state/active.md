@@ -28,7 +28,9 @@ Repository: git@github.com:zcCarl/one-word-game.git
 - docs/gdd/roguelike-turn-based-maze-gdd.md
 - docs/tasks/roguelike-turn-based-maze-tasks.md
 - docs/acceptance/roguelike-turn-based-maze-acceptance.md
+- docs/art/gpt-asset-production-pipeline.md
+- docs/art/roguelike-maze-gpt-prompts.md
 
 ## Next Step
 
-给 Multica 正式10人核心小队派发制作任务。
+使用 Codex 统一控制 GPT 图像生成入口，先生成 MVP style contact sheet，再进入生产资产切图和接入。
