@@ -39,10 +39,20 @@ Codex 在派单前生成制作包:
 1. 制作人、策划、主程先产出计划。
 2. 视觉、美术提示词、音频并行定义表现。
 3. 玩法/UI/技术美术进入实现。
-4. QA Lead 首轮验收。
-5. Codex 统筹返工。
-6. QA Lead 复验。
-7. Codex 合并并写最终交付说明。
+4. 主程把候选 agent 分支集成到唯一 QA 目标分支。
+5. Codex 做 QA 前门禁检查: 目标分支、提交 SHA、启动命令、issue 去重、blocker owner。
+6. QA Lead 首轮验收。
+7. Codex 统筹返工。
+8. QA Lead 复验。
+9. Codex 合并并写最终交付说明。
+
+## 3.1 Issue 跟进规则
+
+- 每次 issue 审查必须输出: 状态分布、关键 blocker、无 owner issue、重复 issue、分支/主线差异。
+- 发现 blocker 后，同一轮必须指派 owner 并写入下一步动作。
+- 发现 agent 分支完成但主线未合并时，父 issue 只能标记为 `in_review` 或 `blocked`，不能标记完成。
+- 重复 issue 只保留一个执行源；另一个必须转为 parent/link/duplicate 说明。
+- QA blocked 不能只写“等待修复”，必须写清 retest trigger: 分支、提交 SHA、启动命令、验证范围。
 
 ## 4. Codex 不偷懒检查
 
@@ -53,4 +63,5 @@ Codex 在派单前生成制作包:
 - 10 个 agent 是否都有明确产物？
 - 有没有因为“最小实现”牺牲了游戏感？
 - QA 是否真的跑过启动和核心流程？
-
+- QA 测的是不是最新集成目标，而不是旧 main 或孤立 agent 分支？
+- Multica 看板状态是否和 GitHub 分支事实一致？

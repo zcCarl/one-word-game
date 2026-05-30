@@ -1,7 +1,7 @@
 # Active Production State
 
 Project: One Word Game
-Status: first_game_requested
+Status: integration_blocked
 Lead: 正式01-制作人
 Repository: git@github.com:zcCarl/one-word-game.git
 
@@ -33,4 +33,10 @@ Repository: git@github.com:zcCarl/one-word-game.git
 
 ## Next Step
 
-使用 Codex 统一控制 GPT 图像生成入口，先生成 MVP style contact sheet，再进入生产资产切图和接入。
+Critical path: resolve DOG-113 by integrating the playable candidate branch `origin/agent/08-ui/7e0f69f5` onto the QA target branch, verifying the README launch command from a clean checkout, then rerunning DOG-103/DOG-112 acceptance.
+
+## Current Production Risk
+
+- QA initially tested stale commit `33446f0`.
+- `main` currently does not include the playable agent branch.
+- Duplicate issue tracks exist between DOG-95..DOG-103 and DOG-104..DOG-112; producer must de-duplicate before final QA.
