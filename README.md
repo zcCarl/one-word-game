@@ -2,6 +2,20 @@
 
 一句话生成一个可玩的游戏 demo。
 
+## Current Playable Demo
+
+`Maze Turn Rogue` is a dependency-free static MVP for the roguelike turn-based maze brief.
+
+Run locally:
+
+```bash
+python3 -m http.server 5173
+```
+
+Then open `http://localhost:5173`.
+
+The demo includes a 7x7 reveal board, HUD, combat, Power Strike, event/shop choices, treasure, traps, victory/defeat, logs, restart, and responsive layout.
+
 这个仓库的核心工作流不是让 Codex 直接偷懒式实现最小 demo，而是让 Codex 先担任项目经理：把一句话需求拆成完整 GDD、任务树、验收标准、风险清单，再通过 Multica 指挥 10 个专业 Agent 并行制作。
 
 ## Production Model
@@ -28,4 +42,3 @@
 - [Codex 项目经理工作流](docs/CODEX_PM_WORKFLOW.md)
 - [Multica Agent 配置](.multica/agents.json)
 - [Multica 项目说明](.multica/project.md)
-

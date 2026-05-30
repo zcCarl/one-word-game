@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maze Turn Rogue Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2320231e'/%3E%3Cpath d='M12 42h40v8H12zm0-14h8v14h-8zm16-14h8v28h-8zm16 8h8v20h-8z' fill='%23f1b951'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">One Word Game MVP</p>
+          <h1>Maze Turn Rogue</h1>
+        </div>
+        <div class="topbar-actions">
+          <label class="seed-field">
+            <span>Seed</span>
+            <input id="seedInput" type="text" maxlength="12" autocomplete="off" />
+          </label>
+          <button id="newRunButton" class="button secondary" type="button">New Run</button>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="board-section" aria-label="Maze board">
+          <div id="startOverlay" class="start-overlay">
+            <div class="start-panel">
+              <p class="eyebrow">Turn-based dungeon run</p>
+              <h2>Reveal adjacent rooms, survive fights, defeat the boss.</h2>
+              <p>
+                Every action advances the run. Spend energy and gold carefully; bad routes can end the expedition.
+              </p>
+              <button id="startButton" class="button primary" type="button">Start Run</button>
+            </div>
+          </div>
+          <div id="board" class="board" role="grid" aria-label="7 by 7 maze"></div>
+          <div id="floatLayer" class="float-layer" aria-hidden="true"></div>
+        </section>
+
+        <aside class="side-panel" aria-label="Run controls and status">
+          <section class="panel-block">
+            <div class="status-line">
+              <span id="stateBadge" class="state-badge">Start</span>
+              <span id="hintText">Start a run to enter the maze.</span>
+            </div>
+            <div id="hud" class="hud-grid"></div>
+          </section>
+
+          <section id="combatPanel" class="panel-block combat-panel hidden">
+            <div class="panel-heading">
+              <h2>Encounter</h2>
+              <span id="enemyTier" class="mini-badge"></span>
+            </div>
+            <div class="enemy-card">
+              <div id="enemyIcon" class="enemy-icon">?</div>
+              <div>
+                <h3 id="enemyName">Enemy</h3>
+                <p id="enemyStats">HP 0 / ATK 0 / DEF 0</p>
+              </div>
+            </div>
+            <div class="action-row">
+              <button id="attackButton" class="button primary" type="button">Attack</button>
+              <button id="skillButton" class="button accent" type="button">Power Strike</button>
+            </div>
+          </section>
+
+          <section class="panel-block">
+            <div class="panel-heading">
+              <h2>Actions</h2>
+              <button id="restartButton" class="icon-button" type="button" title="Restart run" aria-label="Restart run">↻</button>
+            </div>
+            <div class="action-row">
+              <button id="potionButton" class="button secondary" type="button">Use Potion</button>
+              <button id="waitButton" class="button secondary" type="button">Rest</button>
+            </div>
+            <p id="actionHelp" class="action-help">Click a glowing adjacent tile to reveal or move.</p>
+          </section>
+
+          <section class="panel-block log-block">
+            <div class="panel-heading">
+              <h2>Run Log</h2>
+              <span id="scorePreview" class="mini-badge">Score 0</span>
+            </div>
+            <ol id="logList" class="log-list" aria-live="polite"></ol>
+          </section>
+        </aside>
+      </main>
+
+      <div id="choiceModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal">
+          <p id="modalKicker" class="eyebrow">Choice</p>
+          <h2 id="modalTitle">Event</h2>
+          <p id="modalBody"></p>
+          <div id="modalChoices" class="choice-list"></div>
+        </div>
+      </div>
+
+      <div id="resultModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <div class="modal result-modal">
+          <p id="resultKicker" class="eyebrow">Run Complete</p>
+          <h2 id="resultTitle">Victory</h2>
+          <p id="resultBody"></p>
+          <div id="resultStats" class="result-stats"></div>
+          <button id="resultRestartButton" class="button primary" type="button">Run Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/game.js"></script>
+  </body>
+</html>
