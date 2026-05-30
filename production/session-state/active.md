@@ -1,7 +1,7 @@
 # Active Production State
 
 Project: One Word Game
-Status: initialized
+Status: first_game_requested
 Lead: 正式01-制作人
 Repository: git@github.com:zcCarl/one-word-game.git
 
@@ -18,7 +18,17 @@ Repository: git@github.com:zcCarl/one-word-game.git
 - 正式09-音频设计
 - 正式10-QA Lead
 
-## Next User Input
+## Active Game Request
 
-等待一句话游戏需求。
+一个肉鸽类回合制游戏，不思议迷宫那种。
 
+## Active Production Documents
+
+- docs/briefs/roguelike-turn-based-maze-brief.md
+- docs/gdd/roguelike-turn-based-maze-gdd.md
+- docs/tasks/roguelike-turn-based-maze-tasks.md
+- docs/acceptance/roguelike-turn-based-maze-acceptance.md
+
+## Next Step
+
+给 Multica 正式10人核心小队派发制作任务。
